@@ -1,6 +1,6 @@
 addon.name    = 'dualchains'
-addon.author  = 'Adamantking'
-addon.version = '1.0.0'
+addon.author  = 'you'
+addon.version = '1.1.0'
 addon.desc    = 'Two characters on one computer: when both have enough TP, they use their weapon skills in order to make a skillchain.'
 addon.link    = ''
 
@@ -8,6 +8,8 @@ require('common')
 local chat  = require('chat')
 local imgui = require('imgui')
 local theme = require('theme')
+require('aurora')(theme)
+theme.persist_scale('dualchains')
 
 ----------------------------------------------------------------------
 -- How it works
@@ -395,6 +397,7 @@ ashita.events.register('d3d_present', 'dualchains_present', function()
         local list = learned_ws(now)
         imgui.SetNextItemWidth(260)
         if imgui.BeginCombo('##dcws', cfg.ws ~= '' and cfg.ws or 'Choose a weapon skill...') then
+            theme.child_scale()
             for _, n in ipairs(list) do
                 if imgui.Selectable(n .. '##dcw', n == cfg.ws) then
                     cfg.ws = n
@@ -445,6 +448,7 @@ ashita.events.register('d3d_present', 'dualchains_present', function()
             for _, l in ipairs(evlog) do imgui.TextColored(COL_DIM, l) end
         end
     end
+    theme.scale_footer()
     theme.finish()
     theme.pop(nc, nv)
     if not win_open[1] then cfg.ui = false save_cfg() end

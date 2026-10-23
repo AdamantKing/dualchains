@@ -28,3 +28,6 @@ Load it on **both** clients, give them opposite roles, pick each character's wea
 ## Notes
 
 This automates actions on two clients, which some servers prohibit. Read your server's rules first. The shared-file idea follows [seekey13/Sidekick](https://github.com/seekey13/Sidekick) (MIT).
+
+## 1.1.0 additions
+- **Aurora look** and a **font scale slider** (25-150%) at the bottom right of the window. The scale is remembered in `config\addons\dualchains\ui.cfg`. Not tested in game.
