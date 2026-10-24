@@ -1,5 +1,7 @@
 # Dual Chains
 
+**NOT APPROVED FOR USE ON CATSEYEXI**
+
 Two characters on one computer, both running Ashita, use weapon skills in order to make a skillchain. That is all it does. It does not engage enemies or use abilities. 
 
 - One character is the **Leader**, the other the **Follower** (set it in the window or with `/dc role lead|follow`).
